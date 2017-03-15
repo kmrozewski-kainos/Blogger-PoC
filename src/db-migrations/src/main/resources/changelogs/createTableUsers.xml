@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="createTableUsers" author="konradm">
+        <createSequence sequenceName="users_id_seq" incrementBy="1" />
+        <createTable tableName="users">
+            <column name="id" type="bigint" defaultValueSequenceNext="users_id_seq">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="java.sql.Types.VARCHAR(100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="display_name" type="java.sql.Types.VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="registered" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="java.sql.Types.VARCHAR(20)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

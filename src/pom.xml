@@ -8,6 +8,10 @@
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <dropwizard.version>1.0.0</dropwizard.version>
+        <spring.version>4.3.2.RELEASE</spring.version>
+    </properties>
     <modules>
         <module>db-migrations</module>
         <module>persistence</module>

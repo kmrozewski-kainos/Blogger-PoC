@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="createTablePosts" author="konradm">
+        <createSequence sequenceName="posts_id_seq" incrementBy="1" />
+        <createTable tableName="posts">
+            <column name="id" type="bigint" defaultValueSequenceNext="posts_id_seq">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="title" type="java.sql.Types.VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="timestamp" type="TIMESTAMP WITH TIMEZONE">
+                <constraints nullable="true" />
+            </column>
+            <column name="content" type="java.sql.Types.VARCHAR(4000)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
