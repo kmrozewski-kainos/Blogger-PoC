@@ -1,4 +1,4 @@
-package configuration;
+package com.blogger.poc.configuration;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

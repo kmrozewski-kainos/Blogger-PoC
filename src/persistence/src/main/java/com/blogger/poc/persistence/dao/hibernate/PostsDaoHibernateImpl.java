@@ -1,11 +1,11 @@
-package dao.hibernate;
+package com.blogger.poc.persistence.dao.hibernate;
 
-import dao.PostsDao;
-import dao.hibernate.entities.PostEntity;
-import domain.Post;
-import domain.User;
+import com.blogger.poc.persistence.dao.PostsDao;
+import com.blogger.poc.persistence.dao.hibernate.entities.PostEntity;
+import com.blogger.poc.persistence.dao.hibernate.mapper.PostMapper;
+import com.blogger.poc.persistence.domain.Post;
+import com.blogger.poc.persistence.domain.User;
 import io.dropwizard.hibernate.AbstractDAO;
-import mapper.PostMapper;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

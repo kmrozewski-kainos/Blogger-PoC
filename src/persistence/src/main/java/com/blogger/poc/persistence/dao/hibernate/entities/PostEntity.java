@@ -1,4 +1,4 @@
-package dao.hibernate.entities;
+package com.blogger.poc.persistence.dao.hibernate.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +29,7 @@ public class PostEntity {
 	private String content;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
+	@JoinColumn(name = "user", nullable = false)
 	private UserEntity user;
 
 	public Long getId() {

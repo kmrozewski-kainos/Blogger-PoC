@@ -1,5 +1,7 @@
-import configuration.BloggerConfiguration;
-import configuration.BloggerSpringConfiguration;
+package com.blogger.poc;
+
+import com.blogger.poc.configuration.BloggerConfiguration;
+import com.blogger.poc.configuration.BloggerSpringConfiguration;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
@@ -52,7 +54,7 @@ public class BloggerApplication extends Application<BloggerConfiguration> {
 																		  Environment environment) {
 		AnnotationConfigWebApplicationContext parent = new AnnotationConfigWebApplicationContext();
 		parent.refresh();
-		parent.getBeanFactory().registerSingleton("configuration", configuration);
+		parent.getBeanFactory().registerSingleton("com/blogger/poc/wfeservices/configuration", configuration);
 		parent.getBeanFactory().registerSingleton("dataSource", configuration.getDataSourceFactory().build(environment
 				.metrics(), "dataSource"));
 		parent.registerShutdownHook();

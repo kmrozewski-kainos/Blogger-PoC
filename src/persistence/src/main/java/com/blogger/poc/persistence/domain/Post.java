@@ -1,13 +1,12 @@
-package domain;
+package com.blogger.poc.persistence.domain;
 
 import java.time.OffsetDateTime;
 
 public class Post {
-
 	private String title;
 	private OffsetDateTime timestamp;
 	private String content;
-	private User author;
+	private User user;
 
 	public String getTitle() {
 		return title;
@@ -33,11 +32,11 @@ public class Post {
 		this.content = content;
 	}
 
-	public User getAuthor() {
-		return author;
+	public User getUser() {
+		return user;
 	}
 
-	public void setAuthor(User author) {
-		this.author = author;
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

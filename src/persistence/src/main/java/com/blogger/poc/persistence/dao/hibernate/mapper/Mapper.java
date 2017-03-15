@@ -1,4 +1,4 @@
-package mapper;
+package com.blogger.poc.persistence.dao.hibernate.mapper;
 
 import org.modelmapper.ModelMapper;
 

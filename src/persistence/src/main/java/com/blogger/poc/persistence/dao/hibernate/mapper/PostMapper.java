@@ -1,7 +1,7 @@
-package mapper;
+package com.blogger.poc.persistence.dao.hibernate.mapper;
 
-import dao.hibernate.entities.PostEntity;
-import domain.Post;
+import com.blogger.poc.persistence.dao.hibernate.entities.PostEntity;
+import com.blogger.poc.persistence.domain.Post;
 import org.springframework.stereotype.Component;
 
 @Component

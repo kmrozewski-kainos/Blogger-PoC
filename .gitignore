@@ -8,3 +8,5 @@
 /src/db-migrations/target
 /src/persistence/target
 /src/wfeservices/target
+
+/src/ops-local/wfeservices/wfeservices.jar

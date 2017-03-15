@@ -1,0 +1,3 @@
+CREATE ROLE local_schema WITH LOGIN CREATEROLE PASSWORD 'localSCHEMA123';
+GRANT CREATE ON DATABASE blog TO local_schema;
+GRANT CREATE, USAGE ON SCHEMA public to local_schema;
