@@ -29,7 +29,7 @@ public class PostEntity {
 	private String content;
 
 	@ManyToOne
-	@JoinColumn(name = "user", nullable = false)
+	@JoinColumn(name = "user_id", nullable = false)
 	private UserEntity user;
 
 	public Long getId() {

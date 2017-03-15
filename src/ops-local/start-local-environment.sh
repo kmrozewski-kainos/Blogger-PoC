@@ -30,6 +30,7 @@ docker-compose up --build dockerize-wait-for-db
 mvn clean install -f ../db-migrations/pom.xml -D liquibase.properties=${PWD}/db/liquibase.properties
 
 # wfeservices
+mvn clean install -f ../persistence/pom.xml
 mvn clean package -DskipTests -f ../pom.xml
 cp ../wfeservices/target/wfeservices-*.jar ./wfeservices/wfeservices.jar
 
