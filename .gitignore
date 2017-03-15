@@ -1,0 +1,10 @@
+.idea
+/src/parent.iml
+/src/db-migrations/db-migrations.iml
+/src/persistence/persistence.iml
+/src/wfeservices/wfeservices.iml
+/src/wfespa/node_modules
+
+/src/db-migrations/target
+/src/persistence/target
+/src/wfeservices/target
