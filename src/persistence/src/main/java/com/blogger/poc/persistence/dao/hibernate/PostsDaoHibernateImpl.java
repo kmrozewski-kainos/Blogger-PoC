@@ -53,6 +53,7 @@ public class PostsDaoHibernateImpl extends AbstractDAO<PostEntity> implements Po
 		Criteria criteria = currentSession().createCriteria(PostEntity.class);
 		criteria.add(Restrictions.eq("user.id", user.getId()));
 		List<PostEntity> postEntities = list(criteria);
+
 		throwExceptionIfNull(postEntities);
 
 		return transform(postEntities, postMapper::mapPostEntityToPost);
