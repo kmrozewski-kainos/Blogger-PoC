@@ -2,7 +2,10 @@ package com.blogger.poc;
 
 import com.blogger.poc.configuration.BloggerConfiguration;
 import com.blogger.poc.configuration.BloggerSpringConfiguration;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.dropwizard.Application;
+import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
@@ -15,6 +18,14 @@ import javax.ws.rs.Path;
 import java.util.EnumSet;
 
 public class BloggerApplication extends Application<BloggerConfiguration> {
+
+	@Override
+	public void initialize(Bootstrap<BloggerConfiguration> bootstrap) {
+		bootstrap
+				.getObjectMapper()
+				.registerModule(new JavaTimeModule())
+				.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+	}
 
 	@Override
 	public void run(BloggerConfiguration configuration, Environment environment) throws Exception {
@@ -34,7 +45,7 @@ public class BloggerApplication extends Application<BloggerConfiguration> {
 	private void registerResources(Environment environment, AnnotationConfigWebApplicationContext ctx) {
 		environment.jersey().register(MultiPartFeature.class);
 
-		for (String beanName: ctx.getBeanNamesForAnnotation(Path.class)) {
+		for (String beanName : ctx.getBeanNamesForAnnotation(Path.class)) {
 			environment.jersey().register(ctx.getBean(beanName));
 		}
 	}

@@ -51,7 +51,7 @@ public class PostsDaoHibernateImpl extends AbstractDAO<PostEntity> implements Po
 	@Override
 	public List<Post> getPostsByAuthor(User user) {
 		Criteria criteria = currentSession().createCriteria(PostEntity.class);
-		criteria.add(Restrictions.eq("user.id", user.getId()));
+		criteria.add(Restrictions.eq("user.name", user.getName()));
 		List<PostEntity> postEntities = list(criteria);
 
 		throwExceptionIfNull(postEntities);

@@ -1,24 +1,29 @@
 package com.blogger.poc.persistence.domain;
 
 import com.blogger.poc.persistence.domain.enums.UserType;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.OffsetTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.OffsetDateTimeSerializer;
 
 import java.time.OffsetDateTime;
 
 public class User {
 
-	private Long id;
+	@JsonProperty("name")
 	private String name;
+
+	@JsonProperty("displayName")
 	private String displayName;
+
+	@JsonProperty("registered")
+	@JsonSerialize(using = OffsetDateTimeSerializer.class)
+	@JsonDeserialize(using = OffsetTimeDeserializer.class)
 	private OffsetDateTime registered;
+
+	@JsonProperty("type")
 	private UserType type;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
