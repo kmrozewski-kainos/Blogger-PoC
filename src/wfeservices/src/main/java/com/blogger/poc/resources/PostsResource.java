@@ -3,9 +3,8 @@ package com.blogger.poc.resources;
 import com.blogger.poc.persistence.dao.PostsDao;
 import com.blogger.poc.persistence.domain.Post;
 import com.blogger.poc.persistence.domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
+import com.google.inject.Inject;
+import io.dropwizard.hibernate.UnitOfWork;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -20,21 +19,24 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Path("/post")
 @Produces(APPLICATION_JSON)
 @Consumes(APPLICATION_JSON)
-@Component
 public class PostsResource {
 
-	@Autowired
 	private PostsDao postsDao;
+
+	@Inject
+	public PostsResource(PostsDao postsDao) {
+		this.postsDao = postsDao;
+	}
 
 	@GET
 	@Path("/{postId}")
-	@Transactional
+	@UnitOfWork
 	public Post getPostById(@PathParam("postId") Long postId) {
 		return postsDao.getPostById(postId);
 	}
 
 	@POST
-	@Transactional
+	@UnitOfWork
 	public List<Post> getPostsByAuthor(User user) {
 		return postsDao.getPostsByAuthor(user);
 	}

@@ -5,30 +5,30 @@ import com.blogger.poc.persistence.dao.hibernate.entities.PostEntity;
 import com.blogger.poc.persistence.dao.hibernate.mapper.PostMapper;
 import com.blogger.poc.persistence.domain.Post;
 import com.blogger.poc.persistence.domain.User;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import javax.ws.rs.WebApplicationException;
 import java.util.List;
 
 import static com.google.common.collect.Lists.transform;
 
-@Repository
+@Singleton
 public class PostsDaoHibernateImpl extends AbstractDAO<PostEntity> implements PostsDao {
 
 	private final static String SELECT_ALL = "SELECT p FROM PostEntity p";
 
-	@Autowired
 	private PostMapper postMapper;
 
-	@Autowired
-	public PostsDaoHibernateImpl(SessionFactory sessionFactory) {
+	@Inject
+	public PostsDaoHibernateImpl(SessionFactory sessionFactory, PostMapper postMapper) {
 		super(sessionFactory);
+		this.postMapper = postMapper;
 	}
 
 	@Override
