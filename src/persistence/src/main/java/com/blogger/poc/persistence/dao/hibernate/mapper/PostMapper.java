@@ -6,10 +6,10 @@ import com.blogger.poc.persistence.domain.Post;
 public class PostMapper extends Mapper {
 
 	public Post mapPostEntityToPost(PostEntity entity) {
-		return modelMapper.map(entity, Post.class);
+		return getModelMapper().map(entity, Post.class);
 	}
 
 	public PostEntity mapPostToPostEntity(Post domain) {
-		return modelMapper.map(domain, PostEntity.class);
+		return getModelMapper().map(domain, PostEntity.class);
 	}
 }

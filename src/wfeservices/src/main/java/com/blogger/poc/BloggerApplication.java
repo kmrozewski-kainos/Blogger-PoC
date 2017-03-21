@@ -23,6 +23,7 @@ public class BloggerApplication extends Application<BloggerConfiguration> {
 				.getObjectMapper()
 				.registerModule(new JavaTimeModule())
 				.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
 		final HibernateBundle hibernateBundle = new HibernateBundle("com.blogger.poc.persistence");
 		bootstrap.addBundle(hibernateBundle);
 

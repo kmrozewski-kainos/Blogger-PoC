@@ -6,10 +6,14 @@ import static org.modelmapper.convention.MatchingStrategies.STRICT;
 
 public abstract class Mapper {
 
-	protected ModelMapper modelMapper;
+	private ModelMapper modelMapper;
 
 	public Mapper() {
 		modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(STRICT);
+	}
+
+	protected ModelMapper getModelMapper() {
+		return modelMapper;
 	}
 }
