@@ -1,0 +1,10 @@
+<div>
+  <h1>{{ post.title }}</h1>
+  <p class="fs28">{{ post.content }}</p>
+  <p class="color-gray fs12">{{ post.timestamp | date: 'EEE, dd-MMM-yyyy HH:mm' }}, @{{ post.author.displayName }}</p>
+</div>
+<div id="comments-container">
+  <hr/>
+  <app-add></app-add>
+  <app-comment *ngFor="let directory of directories" [directory]="directory"></app-comment>
+</div>

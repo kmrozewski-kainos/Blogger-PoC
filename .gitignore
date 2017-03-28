@@ -3,10 +3,15 @@
 /src/db-migrations/db-migrations.iml
 /src/persistence/persistence.iml
 /src/wfeservices/wfeservices.iml
-/src/wfespa/node_modules
+/src/wfespa/wfespa.iml
 
 /src/db-migrations/target
 /src/persistence/target
 /src/wfeservices/target
+/src/wfespa/target
+
+/src/tools/initial-db-load/node_modules/
+/src/wfespa/node_modules
 
 /src/ops-local/wfeservices/wfeservices.jar
+/src/wfespa/.editorconfig

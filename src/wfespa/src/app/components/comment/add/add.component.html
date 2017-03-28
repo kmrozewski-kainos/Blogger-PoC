@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <div [ngbCollapse]="!isCollapsed">
+    <form [formGroup]="commentForm" *ngIf="active" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="comment-input">Comment</label>
+        <textarea class="form-control resize-none" id="comment-input" formControlName="commentContent" placeholder="write your comment" rows="6"
+          required></textarea>
+        <div *ngIf="commentFormErrors.commentContent" class="alert alert-danger">
+          {{commentFormErrors.commentContent}}
+        </div>
+      </div>
+      <div class="mt5">
+        <button class="btn btn-success w150" *ngIf="isCollapsed" type="submit" [disabled]="!commentForm.valid">Save</button>
+        <button class="btn btn-default w150" *ngIf="isCollapsed" (click)="toggle()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <button class="btn btn-default w150" *ngIf="!isCollapsed" (click)="toggle()">Add comment</button>
+</div>

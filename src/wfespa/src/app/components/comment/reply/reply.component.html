@@ -1,0 +1,18 @@
+<label class="pointer unselectable" (click)="toggleCollapse()">Reply</label>
+<div [ngbCollapse]="isCollapsed">
+  <form #form="ngForm" *ngIf="active" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <textarea class="form-control resize-none" placeholder="write your reply" rows="3" name="reply" [(ngModel)]="content" #reply="ngModel"
+        required minlength="1" maxlength="1000"></textarea>
+      <div *ngIf="reply.errors && (reply.dirty || reply.touched)" class="alert alert-danger">
+        <div [hidden]="!reply.errors.required">This field is required</div>
+        <div [hidden]="!reply.errors.minlength">Comment have to be at least 1 character long.</div>
+        <div [hidden]="!reply.errors.maxlength">Comment cannot be more than 1000 characters long.</div>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-sm btn-success" type="submit" [disabled]="!form.form.valid">Save</button>
+      <button class="btn btn-sm btn-default" (click)="toggleCollapse()">Cancel</button>
+    </div>
+  </form>
+</div>

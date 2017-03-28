@@ -1,0 +1,15 @@
+<div class="comment">
+  <div>{{directory.comment.content}}</div>
+  <div>
+    <span class="fs11 fb" [ngClass]="{'color-red': isBelow(), 'color-green': isAbove()}">score: {{directory.comment.score}}</span>
+    <span class="fs11 color-gray">{{directory.comment.timestamp | date: 'EEE, dd-MMM-yyyy HH:mm'}}, @{{directory.comment.author.displayName}}
+      <span class="color-red" *ngIf="directory.comment.author.type === 3">(unregistered)</span>
+    </span>
+  </div>
+  <div>
+    <label class="fs22 fb pointer unselectable" (click)="changeScore(1)">+</label>
+    <label class="fs22 fb pointer unselectable" (click)="changeScore(-1)">-</label>
+    <app-reply [directory]="directory"></app-reply>
+  </div>
+  <app-comment *ngFor="let subdirectory of directory.subcomments" [directory]="subdirectory"></app-comment>
+</div>
