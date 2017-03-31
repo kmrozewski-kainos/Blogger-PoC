@@ -1,0 +1,33 @@
+database:
+  host: localhost
+  database: blog
+  user: postgres
+  password: postgres123
+
+users:
+  - id: 1
+    name: b.cantpronounce
+    display_name: Britishname Cantpronounce
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 2
+    name: unregistered
+    display_name: Unregistered user
+    registered: 2017-01-01 00:00:00+00
+    type: Unregistered
+posts:
+  - post:
+      title: Post title 1
+      timestamp: 2017-04-02 21:37:00+01
+      content: Lorem ipsum
+    user_id: 1
+  - post: 
+      title: Post title 2
+      timestamp: 2017-04-02 21:38:00+01
+      content: Lorem ipsum 2
+    user_id: 1
+  - post: 
+      title: New post [CHECK THIS OUT]
+      timestamp: 2017-02-01 12:34:55+02
+      content: unregistered user post content
+    user_id: 2

@@ -1,0 +1,9 @@
+{
+  "name": "initial-db-load",
+  "version": "1.0.0",
+  "devDependencies": {
+    "pg": "6.1.0",
+    "request": "2.79.0",
+    "yamljs": "0.2.8"
+  }
+}
