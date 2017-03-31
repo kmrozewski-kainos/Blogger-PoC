@@ -1,3 +1,5 @@
+# Initial DB data
+
 ## Prerequisities
 * nodejs (>=6.9.5)
 * npm (>=3.10.10)
