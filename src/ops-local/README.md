@@ -1,3 +1,5 @@
+# Local development environment
+
 ## Prerequisities
 * Docker (>=1.12.1)
 * Docker compose (>=1.8.0)
