@@ -1,8 +1,8 @@
 ## Prerequisities
 * nodejs (>=6.9.5)
 * npm (>=3.10.10)
-* prerequisities from <strong>local development environment</strong> (see README from `ops-local`)
-* database structure - run liquibase migrations from `ops-local/start-local-db.sh`
+* prerequisities for <strong>local development environment</strong> (see [README](../../ops-local/README.md) from `ops-local`)
+* database structure - run liquibase migrations from `ops-local/start-local-db.sh` or `ops-local/start-local-environment.sh`
 
 ## Getting started
 * run `npm install` to install dependencies
