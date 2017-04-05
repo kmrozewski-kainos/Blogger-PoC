@@ -6,28 +6,203 @@ database:
 
 users:
   - id: 1
-    name: b.cantpronounce
-    display_name: Britishname Cantpronounce
+    name: shitpost-scrub
     registered: 2017-03-20 11:22:59+01
     type: Registered
   - id: 2
-    name: unregistered
-    display_name: Unregistered user
-    registered: 2017-01-01 00:00:00+00
-    type: Unregistered
+    name: McSpike
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 3
+    name: destoret_
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 4
+    name: InVultusSolis
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 5
+    name: Cambridge_
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 6
+    name: LazyWings
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 7
+    name: Beepopp
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 8
+    name: kowell
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 9
+    name: AnakinSkywalker_
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 10
+    name: paigezero
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 11
+    name: Facepilot
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 12
+    name: THEstatefarmjake
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 13
+    name: exteus
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 14
+    name: DreadMaster_Davis
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
+  - id: 15
+    name: clearly_max
+    registered: 2017-03-20 11:22:59+01
+    type: Registered
 posts:
   - post:
-      title: Post title 1
-      timestamp: 2017-04-02 21:37:00+01
-      content: Lorem ipsum
+      title: What are you in the top 1% of?
+      timestamp: 2017-04-05 13:17:00+01
     user_id: 1
-  - post: 
-      title: Post title 2
-      timestamp: 2017-04-02 21:38:00+01
-      content: Lorem ipsum 2
-    user_id: 1
-  - post: 
-      title: New post [CHECK THIS OUT]
-      timestamp: 2017-02-01 12:34:55+02
-      content: unregistered user post content
+comments:
+  - row:
     user_id: 2
+    post_id: 1
+    comment:
+      id: 1
+      parent_id:
+      content: Finnish speakers if you count everyone on the Earth instead of everyone who speaks Finnish. Otherwise probably nothing.
+      points: 1165
+      timestamp: 2017-04-05 13:17:01+01
+  - row:
+    user_id: 2
+    post_id: 1
+    comment:
+      id: 2
+      parent_id: 1
+      content: Same here. Perkele että tuntuu hyvältä.
+      points: 195
+      timestamp: 2017-04-05 13:17:01+01
+  - row:
+    user_id: 4
+    post_id: 1
+    comment:
+      id: 3
+      parent_id: 2
+      content: I know "perkele" and recognize "hyvältä" as some form of "hyvä".
+      points: 89
+      timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 3
+      post_id: 1
+      comment:
+        id: 4
+        parent_id: 3
+        content: "Translation: Damn it feels good!"
+        points: 89
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 5
+      post_id: 1
+      comment:
+        id: 5
+        parent_id: 4
+        content: olla gangsteri
+        points: 65
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 6
+      post_id: 1
+      comment:
+        id: 6
+        parent_id: 1
+        content: "I only know 2 words from playing games with Finnish friends: Perkele and Ripuli. Why those are the only Finnish words that come up I have no idea."
+        points: 34
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 2
+      post_id: 1
+      comment:
+        id: 7
+        parent_id: 6
+        content: Because those two are the only words you really need to know
+        points: 39
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 8
+      post_id: 1
+      comment: 
+        id: 8
+        parent_id:
+        content: Hopefully.. banging my wife
+        points: 546
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 9
+      post_id: 1
+      comment:
+        id: 9
+        parent_id: 8
+        content: I also banged his wife. Oops.
+        points: 62
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 10
+      post_id: 1
+      comment:
+        id: 10
+        parent_id: 8
+        content: Wait, you hope that enough people have banged her that you only make up 1% of the number?
+        points: 118
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 11
+      post_id: 1
+      comment:
+        id: 11
+        parent_id:
+        content: There's an obscure board game with only one international grandmaster, and that's me. So that.
+        points: 868
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 12
+      post_id: 1
+      comment:
+        id: 12
+        parent_id: 11
+        content: Is it Cones of Dunshire?
+        points: 580
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 13
+      post_id: 1
+      comment:
+        id: 13
+        parent_id: 12
+        content: Did they make that an actual game, or is it just a Parks and Rec reference?
+        points: 118
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 14
+      post_id: 1
+      comment:
+        id: 14
+        parent_id:
+        content: It's actually being made
+        points: 77
+        timestamp: 2017-04-05 13:17:01+01
+  - row:
+      user_id: 15
+      post_id: 1
+      comment:
+        id: 15
+        parent_id:
+        content: What game?
+        points: 45
+        timestamp: 2017-04-05 13:17:01+01

@@ -2,8 +2,10 @@ let pg = require('pg');
 
 let DbController = {
     connection: null,
-    addUserSql: "INSERT INTO users(id, name, display_name, registered, type) VALUES($1, $2, $3, $4, $5)",
-    addPostSql: "INSERT INTO posts(title, timestamp, content, user_id) VALUES($1, $2, $3, $4)",
+    addUserSql: 'INSERT INTO users(id, name, display_name, registered, type) VALUES($1, $2, $3, $4, $5)',
+    addPostSql: 'INSERT INTO posts(title, timestamp, content, user_id) VALUES($1, $2, $3, $4)',
+    addCommentSql: 'INSERT INTO comments(id, user_id, post_id, parent_id, content, points, timestamp) VALUES($1, $2, $3, $4, $5, $6, $7)',
+
     client: (config) => {
         if (DbController.connection === null) {
             DbController.connection = new pg.Pool(config);
@@ -12,6 +14,7 @@ let DbController = {
 
         return DbController.connection;
     },
+
     addUser: (user, config) => new Promise((resolve, reject) =>
         DbController
         .client(config)
@@ -25,6 +28,14 @@ let DbController = {
         .client(config)
         .query(
             DbController.addPostSql, [post.title, post.timestamp, post.content, userId],
+            (error, result) => error ? handleError(error, reject) : handleSuccess(result, resolve)
+        )
+    ),
+    addComment: (userId, postId, comment, config) => new Promise((resolve, reject) =>
+        DbController
+        .client(config)
+        .query(
+            DbController.addCommentSql, [userId, postId, comment.parent_id, comment.content, comment.points, comment.timestamp],
             (error, result) => error ? handleError(error, reject) : handleSuccess(result, resolve)
         )
     )
